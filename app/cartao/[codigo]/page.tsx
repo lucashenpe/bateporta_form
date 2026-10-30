@@ -107,8 +107,8 @@ export default async function CartaoPage({ params }: { params: Promise<{ codigo:
           </article>
         </div>
         <div className={styles.walletFooter}>
-          <p className={styles.walletStatus}>{target > 0 && remaining === 0 ? "Meta de compras alcançada!" : target > 0 ? `Faltam ${remaining} ${remaining === 1 ? "compra" : "compras"} para completar seu cartão.` : "Acompanhe aqui suas compras registradas."}</p>
-          <p>O atendente pode ler o QR code ou digitar o código impresso abaixo dele. As marcações são atualizadas após a confirmação da compra.</p>
+          <p className={styles.walletStatus}>{card.utilizado ? "Limite de uso atingido. Este cartão não aceita novas compras." : target > 0 ? `Faltam ${remaining} ${remaining === 1 ? "compra" : "compras"} para completar seu cartão.` : "Acompanhe aqui suas compras registradas."}</p>
+          <p>{card.utilizado ? "Consulte a loja para saber mais sobre o benefício." : "O atendente pode ler o QR code ou digitar o código impresso abaixo dele. As marcações são atualizadas após a confirmação da compra."}</p>
           <AtualizarCartao className={styles.refreshButton} />
           {card.descricao && <p className={styles.walletDescription}>{card.descricao}</p>}
         </div>
@@ -119,7 +119,7 @@ export default async function CartaoPage({ params }: { params: Promise<{ codigo:
     <section className={styles.intro} aria-labelledby="page-title">
       <span className={styles.eyebrow}>Bate Porta · Benefícios</span>
       <h1 id="page-title">Seu benefício,<br /><em>sempre com você.</em></h1>
-      <p>Guarde esta página e apresente o código na loja quando for usar seu benefício.</p>
+      <p>Guarde esta página e apresente o QR code ou o código na loja quando for usar seu benefício.</p>
       <div className={styles.storeline}><span className={styles.storemark} aria-hidden="true">✦</span><span>{card.loja}</span></div>
       {card.descricao && <p className={styles.description}>{card.descricao}</p>}
     </section>
@@ -131,12 +131,14 @@ export default async function CartaoPage({ params }: { params: Promise<{ codigo:
             {image && <Image unoptimized className={styles.campaignImage} src={image} alt={`Imagem da campanha ${card.campanha}`} width={350} height={112} />}
             <div className={styles.middle}><span className={styles.kicker}><span className={card.utilizado ? styles.dotUsed : styles.dot} aria-hidden="true" />{card.utilizado ? "Benefício indisponível" : "Seu cartão digital"}</span><h2>{card.campanha}</h2><div className={styles.benefit}>{card.beneficio}</div></div>
             <div className={styles.divider} />
+            <div className={styles.benefitQrShell}><Image unoptimized src={card.qr_code_base64} alt={`QR code do cartão ${card.codigo} para o atendente ler`} width={512} height={512} className={styles.benefitQrImage} /></div>
+            <p className={styles.benefitScanLabel}>ATENDENTE: LEIA O QR CODE</p>
             <div className={styles.bottom}><div><span className={styles.label}>Titular</span><span className={styles.value}>{card.nome}</span></div><div><span className={styles.label}>Código</span><span className={styles.code}>{card.codigo}</span></div></div>
           </div>
         </article>
       </div>
       {loyalty && target > 0 ? <section className={styles.progress} aria-label="Progresso do cartão de fidelidade"><div className={styles.progressHeading}><strong>{purchases} de {target} compras</strong><span>{remaining === 0 ? "Meta alcançada" : `${remaining} ${remaining === 1 ? "compra restante" : "compras restantes"}`}</span></div><div className={styles.progressTrack} role="progressbar" aria-valuenow={Math.min(purchases, target)} aria-valuemin={0} aria-valuemax={target} aria-label="Compras registradas"><span style={{ width: `${progress}%` }} /></div></section> : null}
-      <p className={styles.foot}>{card.utilizado ? "Este cupom já foi utilizado ou enviado para revisão." : <><strong>Como usar:</strong> apresente este cartão na loja {card.loja}.{loyalty && target === 0 ? ` Compras registradas: ${purchases}.` : ""}</>}</p>
+      <p className={styles.foot}>{card.utilizado ? card.tipo === "CASHBACK" ? "Limite de uso atingido. Este cartão não aceita novas compras." : "Este cupom já foi utilizado ou enviado para revisão." : <><strong>Como usar:</strong> apresente este cartão na loja {card.loja}.</>}</p>
     </div>
   </main>;
 }
