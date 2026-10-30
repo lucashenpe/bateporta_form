@@ -1,0 +1,77 @@
+:global(body){background:#f3f1e9}.main{max-width:980px;min-height:100svh;margin:auto;padding:44px 28px 54px;display:grid;align-items:center;grid-template-columns:minmax(0,1fr) minmax(320px,430px);gap:clamp(36px,7vw,90px);color:#18362f;background:radial-gradient(circle at 12% 9%,#e0ebe2 0,transparent 36%),radial-gradient(circle at 90% 92%,#e9d9bd 0,transparent 34%),#f3f1e9;font-family:Inter,ui-sans-serif,system-ui,sans-serif}.main *{box-sizing:border-box}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#457568}.intro h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(42px,5vw,70px);line-height:1.04;letter-spacing:-.045em;margin:18px 0 22px}.intro h1 em{font-style:normal;color:#bd7950}.intro p{font-size:17px;line-height:1.7;color:#60746b;max-width:420px;margin:0}.storeline{display:flex;align-items:center;gap:12px;margin-top:35px;font-weight:700}.storemark{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#dce9d8;color:#20654c;font-family:Georgia,serif;font-size:23px}.description{margin-top:12px!important;font-size:14px!important}.scene{perspective:1200px;animation:arrive .85s both}.card{position:relative;min-height:530px;overflow:hidden;border-radius:28px;color:#f7f4e9;background:radial-gradient(circle at 95% 10%,#548575 0,transparent 38%),linear-gradient(145deg,#174d3f,#0c2d28 80%);box-shadow:0 35px 70px #143e3340,0 12px 24px #143e3322;animation:float 6s ease-in-out infinite}.card:before{content:"";position:absolute;inset:-70% auto auto -55%;width:150%;height:180%;transform:rotate(24deg);background:linear-gradient(90deg,transparent 35%,#ffffff12 50%,transparent 65%);animation:shine 7s ease-in-out infinite}.card:after{content:"";position:absolute;right:-100px;top:70px;width:330px;height:330px;border:1px solid #ffffff35;border-radius:50%;box-shadow:0 0 0 38px #ffffff0a,0 0 0 76px #ffffff08,0 0 0 115px #ffffff06}.cardInner{position:relative;z-index:1;display:flex;flex-direction:column;min-height:530px;padding:30px}.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:13px}.brandicon{width:27px;height:27px;border-radius:8px 8px 8px 2px;background:#d5ad77;transform:rotate(-12deg);display:grid;place-items:center;color:#163b30;font-family:Georgia,serif;font-size:20px;letter-spacing:0}.type{font-size:10px;letter-spacing:.13em;text-transform:uppercase;max-width:120px;text-align:right;line-height:1.4;color:#dbede4}.campaignImage{width:100%;max-height:112px;object-fit:contain;object-position:left;margin-top:26px;border-radius:9px}.middle{margin:auto 0 30px}.kicker{display:inline-flex;gap:8px;align-items:center;padding:7px 11px;border:1px solid #d5e8d866;border-radius:99px;background:#ffffff16;color:#e5f4e9;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.dot,.dotUsed{width:7px;height:7px;border-radius:50%;background:#bcdf9f;box-shadow:0 0 0 4px #bcdf9f22}.dotUsed{background:#e8a884;box-shadow:0 0 0 4px #e8a88422}.middle h2{font-family:Georgia,serif;font-weight:500;font-size:clamp(35px,4vw,49px);line-height:1.02;letter-spacing:-.045em;margin:17px 0 10px}.benefit{font-size:24px;font-weight:750;color:#dfbd8d;letter-spacing:-.03em}.divider{height:1px;background:#ffffff37;margin-bottom:24px}.bottom{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end}.label{display:block;color:#bcd4c5;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;margin-bottom:7px}.value{font-size:15px;font-weight:650;overflow-wrap:anywhere}.code{font-size:17px;font-weight:800;letter-spacing:.08em;font-variant-numeric:tabular-nums;text-align:right;overflow-wrap:anywhere}.progress{background:#ffffffc9;border:1px solid #d9e5d8;border-radius:18px;margin-top:28px;padding:18px 20px;box-shadow:0 8px 24px #173a2d0d}.progressHeading{display:flex;justify-content:space-between;gap:15px;color:#245343;font-size:13px}.progressHeading span{color:#61756b}.progressTrack{height:9px;margin-top:13px;border-radius:99px;overflow:hidden;background:#deeadf}.progressTrack span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#308164,#b6aa72);transition:width .6s ease}.foot{margin-top:25px;color:#718278;font-size:13px;line-height:1.5}.foot strong{color:#2f5a49}.missing{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30px;color:#18362f;background:#f3f1e9}.missing h1{font-family:Georgia,serif;font-size:clamp(36px,6vw,58px);font-weight:500;margin:20px 0 8px}.missing p{color:#60746b}@keyframes arrive{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(-1deg)}}@keyframes shine{0%,45%,100%{left:-125%}60%{left:85%}}@media(max-width:760px){.main{grid-template-columns:1fr;gap:35px;max-width:520px;padding:42px 21px 40px}.intro h1{font-size:45px;margin:14px 0}.intro p{font-size:15px}.storeline{margin-top:23px}.card,.cardInner{min-height:485px}.cardInner{padding:25px}.foot{margin-top:22px}}@media(max-width:390px){.card,.cardInner{min-height:470px}.bottom{grid-template-columns:1fr;gap:15px}.code{text-align:left}.middle h2{font-size:39px}.benefit{font-size:22px}}@media(prefers-reduced-motion:reduce){.scene,.card,.card:before{animation:none}.card{transform:none}.progressTrack span{transition:none}}
+
+.cashbackCard{background:radial-gradient(circle at 95% 10%,#4f8fbb 0,transparent 39%),linear-gradient(145deg,#1e5f89,#102d50 82%);box-shadow:0 35px 70px #153e6140,0 12px 24px #153e6122}
+.cashbackCard .brandicon{background:#aee0f0;color:#164366}
+.cashbackCard .benefit{color:#b7e8f5}
+.cashbackCard .type,.cashbackCard .label{color:#d4e9f6}
+.cashbackCard .kicker{border-color:#c4e7f066;color:#ecf9ff}
+.cashbackCard .dot{background:#a7e3ee;box-shadow:0 0 0 4px #a7e3ee22}
+.discountCard{background:radial-gradient(circle at 95% 10%,#906cba 0,transparent 39%),linear-gradient(145deg,#674787,#322347 82%);box-shadow:0 35px 70px #39224940,0 12px 24px #39224922}
+.discountCard .brandicon{background:#f4c8df;color:#592d66}
+.discountCard .benefit{color:#ffd1e6}
+.discountCard .type,.discountCard .label{color:#efddf5}
+.discountCard .kicker{border-color:#f0d8ef66;color:#fff0fa}
+.discountCard .dot{background:#f3bbda;box-shadow:0 0 0 4px #f3bbda22}
+
+/* Loyalty wallet card */
+.walletPage{min-height:100svh;background:radial-gradient(circle at 50% -18%,#f3dfcd 0,transparent 47%),#f8f5f1;color:#273830;font-family:Inter,ui-sans-serif,system-ui,sans-serif;padding:0 20px 54px}
+.walletPage *{box-sizing:border-box}
+.walletHeader{max-width:1080px;margin:auto;height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #e9e1d8}
+.walletBrandLogo{display:block;width:145px;height:auto;max-height:60px;object-fit:contain}
+.walletHeaderTag{font-size:12px;font-weight:650;color:#796f65}
+.walletContent{max-width:520px;margin:0 auto}
+.walletIntro{text-align:center;padding:31px 0 27px}
+.walletEyebrow{font-size:10px;font-weight:850;letter-spacing:.22em;color:#bd5d3c}
+.walletIntro h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,8vw,43px);font-weight:600;letter-spacing:-.045em;line-height:1.08;margin:11px 0 9px;color:#293c32}
+.walletIntro p{font-size:14px;line-height:1.5;color:#6f746d;margin:0}
+.walletStack{position:relative;isolation:isolate;padding-top:20px;max-width:400px;margin:auto;animation:walletEnter .7s both}
+.stackBackOne,.stackBackTwo{position:absolute;left:14px;right:14px;height:45px;border-radius:21px 21px 0 0;top:0;box-shadow:0 5px 10px #28291b15}
+.stackBackOne{background:#2f6a4c;transform:translateY(3px) rotate(-2deg)}
+.stackBackTwo{background:#a53528;left:21px;right:21px;transform:translateY(13px) rotate(2deg)}
+.loyaltyCard{position:relative;overflow:hidden;border-radius:22px;background:#bc4f2b;color:#fff;box-shadow:0 26px 58px #59301e3d,0 3px 8px #56301c2e}
+.loyaltyTop{min-height:78px;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 22px;background:linear-gradient(105deg,#c75b30,#b94d2e 67%,#a8462b)}
+.loyaltyStore{display:flex;align-items:center;gap:12px;min-width:0}
+.loyaltyStoreIcon{display:grid;place-items:center;flex:0 0 auto;width:39px;height:39px;border-radius:10px;background:#f7e5c7;color:#a74f30;font:28px Georgia,serif}
+.loyaltyStore div{min-width:0}
+.loyaltySmallLabel,.loyaltyCount span,.loyaltyProgress span{display:block;font-size:9px;font-weight:800;letter-spacing:.14em;color:#ffe6d4b5}
+.loyaltyStore strong{display:block;margin-top:4px;font-size:15px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:225px}
+.loyaltyCount{text-align:right;flex:0 0 auto}
+.loyaltyCount strong{display:block;font-size:18px;letter-spacing:-.04em;font-variant-numeric:tabular-nums;margin-top:3px}
+.loyaltyCount i{font-style:normal;font-size:12px;color:#ffdbc0}
+.stampArea{position:relative;min-height:225px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 82% 25%,#e9a960 0,transparent 35%),radial-gradient(circle at 17% 90%,#783c2b 0,transparent 35%),linear-gradient(135deg,#8c3c28,#bb6739)}
+.stampArea:before{content:"";position:absolute;inset:0;opacity:.2;background:repeating-radial-gradient(circle at 50% 50%,transparent 0 17px,#ffe6be 18px 19px,transparent 20px 45px)}
+.stampImage{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9)}
+.stampShade{position:absolute;inset:0;background:linear-gradient(180deg,#351d17a8 0,#4e24188c 45%,#4b2419a8 100%)}
+.stampContent{position:relative;z-index:1;width:100%;padding:19px 20px 22px}
+.campaignLine{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:19px;font-size:14px;font-weight:750;line-height:1.2;text-shadow:0 2px 5px #2b160f88}
+.campaignSparkle{color:#ffdb9b;font-size:22px;line-height:1}
+.stampRange{font-size:10px;font-weight:700;color:#ffead9;margin:-9px 0 10px}
+.stamps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));justify-items:center;gap:14px 5px;padding:0;margin:0;list-style:none}
+.stamps li{width:clamp(40px,11vw,51px);height:clamp(40px,11vw,51px);border-radius:50%;display:grid;place-items:center;font-size:19px;font-weight:850;font-variant-numeric:tabular-nums;transition:transform .2s ease}
+.stampDone{background:#f1bd7d;color:#903921;border:2px solid #ffe3ad;box-shadow:0 4px 0 #6f301b8c,0 8px 16px #21100d63;animation:stampIn .45s both}
+.stampDone span{line-height:1}
+.stampPending{border:2px solid #fff9e6d4;background:#ffffff1e;color:#ffeddb;box-shadow:inset 0 0 0 3px #ffffff21;text-shadow:0 1px 3px #401e18}
+.noGoal{font-size:14px;color:#fff4e8;text-align:center;padding:14px 0}
+.loyaltyLower{text-align:center;padding:20px 22px 21px;background:linear-gradient(180deg,#bd512d,#aa4027)}
+.loyaltyProgress{display:grid;grid-template-columns:1fr 1fr;gap:15px;text-align:left}
+.loyaltyProgress>div:last-child{text-align:right}
+.loyaltyProgress strong{display:block;margin-top:5px;font-size:13px;line-height:1.25;overflow-wrap:anywhere}
+.loyaltyTrack{height:6px;border-radius:99px;margin:14px 0 17px;background:#f3c7a572;overflow:hidden}
+.loyaltyTrack span{display:block;height:100%;background:#fff4d4;border-radius:inherit;transition:width .5s ease}
+.qrShell{display:grid;place-items:center;width:164px;height:164px;margin:19px auto 10px;padding:10px;border-radius:14px;background:#fff;box-shadow:0 5px 13px #5c241b55}
+.qrImage{display:block;width:144px;height:144px;object-fit:contain;image-rendering:pixelated}
+.scanLabel{font-size:10px;font-weight:850;letter-spacing:.16em;color:#ffddc2;margin:13px 0 5px}
+.loyaltyCode{display:block;font-size:14px;letter-spacing:.12em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.walletFooter{text-align:center;max-width:400px;margin:27px auto 0}
+.walletFooter p{font-size:13px;line-height:1.5;color:#697169;margin:9px auto}
+.walletFooter .walletStatus{font-size:15px;font-weight:750;color:#344f3f}
+.walletFooter .walletDescription{font-size:12px;color:#777b72}
+@keyframes walletEnter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes stampIn{from{transform:scale(.7);opacity:.5}to{transform:scale(1);opacity:1}}
+@media(max-width:450px){.walletPage{padding:0 14px 40px}.walletHeader{height:60px}.walletBrandLogo{width:125px;max-height:52px}.walletIntro{padding:27px 0 24px}.walletStack{max-width:385px}.loyaltyTop{padding:14px 17px}.loyaltyStore strong{max-width:190px}.stampContent{padding-left:14px;padding-right:14px}.stamps{gap:11px 2px}}
+@media(max-width:360px){.loyaltyStore strong{max-width:155px}.loyaltyTop{gap:7px}.stampContent{padding-left:10px;padding-right:10px}.stamps li{width:39px;height:39px}}
+@media(prefers-reduced-motion:reduce){.walletStack,.stampDone{animation:none}.loyaltyTrack span{transition:none}}
+
+.refreshButton{margin-top:10px;border:1px solid #d8c7b8;border-radius:12px;background:#fffaf4;color:#a94a2b;padding:10px 16px;font:700 12px Inter,ui-sans-serif,system-ui,sans-serif;cursor:pointer;transition:background .2s ease,transform .2s ease}
+.refreshButton:hover{background:#fff0e2;transform:translateY(-1px)}
+.refreshButton:disabled{opacity:.6;cursor:wait;transform:none}

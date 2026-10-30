@@ -2,6 +2,8 @@
 
 Página pública para cadastro de fidelidade, cashback e cupom. Aceita `/fidelidade/:token`, `/fidelidade?token=...` e `/?token=...`.
 
+O cartão digital do cliente fica em `/cartao/:codigo`. O servidor consulta a API com `API_URL`, mostra o progresso das compras de Fidelidade e o estado de uso do cupom. A API envia esse link por WhatsApp usando `VOUCHER_CARTAO_BASE_URL` configurada com a origem pública deste projeto.
+
 ## Executar
 
 ```bash
