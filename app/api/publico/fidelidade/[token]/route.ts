@@ -6,8 +6,10 @@ type Context = { params: Promise<{ token: string }> };
 const validToken = (token: string) => /^[A-Za-z0-9_-]{16,64}$/.test(token);
 
 function apiUrl(token: string) {
-  const base = process.env.API_URL?.replace(/\/$/, "");
-  return base && validToken(token) ? `${base}/api/v1/publico/vouchers/cadastro/${encodeURIComponent(token)}` : null;
+  if (!validToken(token)) return null;
+  const configured = process.env.API_URL?.trim();
+  const base = (configured || (process.env.NODE_ENV === "development" ? "http://127.0.0.1:8080" : "https://api.bateporta.com.br")).replace(/\/$/, "");
+  return `${base}/api/v1/publico/vouchers/cadastro/${encodeURIComponent(token)}`;
 }
 
 async function relay(response: Response) {
@@ -17,9 +19,10 @@ async function relay(response: Response) {
 }
 
 export async function GET(_request: NextRequest, { params }: Context) {
-  const { token } = await params;
+  const { token: rawToken } = await params;
+  const token = rawToken.replace(/\s+/g, "");
   const url = apiUrl(token);
-  if (!url) return NextResponse.json({ message: "Link inválido ou API não configurada." }, { status: 400 });
+  if (!url) return NextResponse.json({ message: "Link de cadastro inválido." }, { status: 400 });
   try {
     return relay(await fetch(url, { headers: { Accept: "application/json" }, cache: "no-store" }));
   } catch {
@@ -28,9 +31,10 @@ export async function GET(_request: NextRequest, { params }: Context) {
 }
 
 export async function POST(request: NextRequest, { params }: Context) {
-  const { token } = await params;
+  const { token: rawToken } = await params;
+  const token = rawToken.replace(/\s+/g, "");
   const url = apiUrl(token);
-  if (!url) return NextResponse.json({ message: "Link inválido ou API não configurada." }, { status: 400 });
+  if (!url) return NextResponse.json({ message: "Link de cadastro inválido." }, { status: 400 });
   try {
     const body: unknown = await request.json();
     if (!body || typeof body !== "object" || Array.isArray(body)) return NextResponse.json({ message: "Dados inválidos." }, { status: 400 });
